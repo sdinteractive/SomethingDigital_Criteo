@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <SomethingDigital_Criteo>
+             <version>0.1.0</version>
+        </SomethingDigital_Criteo>
+    </modules>
+    <global>
+        <helpers>
+            <somethingdigital_criteo>
+                <class>SomethingDigital_Criteo_Helper</class>
+            </somethingdigital_criteo>
+        </helpers>
+        <blocks>
+            <somethingdigital_criteo>
+                <class>SomethingDigital_Criteo_Block</class>
+            </somethingdigital_criteo>
+        </blocks>
+        <models>
+            <somethingdigital_criteo>
+                <class>SomethingDigital_Criteo_Model</class>
+            </somethingdigital_criteo>
+        </models>
+    </global>
+    <frontend>
+        <layout>
+            <updates>
+                <somethingdigital_criteo>
+                    <file>somethingdigital_criteo.xml</file>
+                </somethingdigital_criteo>
+            </updates>
+        </layout>
+    </frontend>
+</config>

@@ -1,0 +1,9 @@
+<script type="text/javascript"> 
+    window.criteo_q = window.criteo_q || []; 
+    window.criteo_q.push(
+        { event: "setAccount", account: "<?php echo addslashes(Mage::getStoreConfig('somethingdigital_criteo/settings/account_number')); ?>" },
+        { event: "setHashedEmail", email: ["<?php echo addslashes(Mage::helper('somethingdigital_criteo')->getHashedEmail()); ?>"] },
+        { event: "setSiteType", type: "d" },
+        { event: "viewList", item: <?php echo $this->getCriteoViewListAsJson(); ?>, keywords: <?php echo json_encode($this->getCriteoSearchKeywords()); ?> }
+    ); 
+</script>
