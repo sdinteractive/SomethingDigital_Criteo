@@ -52,7 +52,34 @@
                             <show_in_default>1</show_in_default>
                             <show_in_website>1</show_in_website>
                             <show_in_store>1</show_in_store>
-                        </fire_basket_tracker_at_checkout>          
+                        </fire_basket_tracker_at_checkout>
+                        <use_deduplication>
+                            <label>Use Deduplication</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>50</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </use_deduplication>
+                        <deduplication_url_match_term>
+                            <label>Deduplication URL Match Term</label>
+                            <comment>Cookie will be dropped if URL contains this term (case insensitive).</comment>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>60</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </deduplication_url_match_term>
+                        <deduplication_cookie_lifetime>
+                            <label>Deduplication Cookie Lifetime</label>
+                            <comment>Lifetime (in days) of cookie for criteo de-duplication. Criteo suggests 15.</comment>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>70</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </deduplication_cookie_lifetime>
                     </fields>
                 </settings>
             </groups>

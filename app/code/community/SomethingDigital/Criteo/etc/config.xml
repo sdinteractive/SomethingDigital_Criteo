@@ -2,7 +2,7 @@
 <config>
     <modules>
         <SomethingDigital_Criteo>
-             <version>0.1.0</version>
+             <version>0.2.0</version>
         </SomethingDigital_Criteo>
     </modules>
     <global>
@@ -31,4 +31,13 @@
             </updates>
         </layout>
     </frontend>
+    <default>
+        <somethingdigital_criteo>
+            <settings>
+                <use_deduplication>0</use_deduplication>
+                <deduplication_url_match_term>criteo</deduplication_url_match_term>
+                <deduplication_cookie_lifetime>15</deduplication_cookie_lifetime>
+            </settings>
+        </somethingdigital_criteo>
+    </default>
 </config>

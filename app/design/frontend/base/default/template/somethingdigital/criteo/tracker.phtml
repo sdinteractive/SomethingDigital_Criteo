@@ -1,3 +1,13 @@
 <script type="text/javascript">
 (function(d,s){var js=d.getElementsByTagName(s)[0];var r=d.createElement(s);r.src=("https:"==location.protocol?"https:":"http:")+"//static.criteo.net/js/ld/ld.js"; js.parentNode.insertBefore(r,js)})(document,"script")
 </script>
+
+<?php if (Mage::getStoreConfigFlag('somethingdigital_criteo/settings/use_deduplication')): ?>
+<script>
+if (window.location.href.toLowerCase().indexOf('<?php echo Mage::getStoreConfig('somethingdigital_criteo/settings/deduplication_url_match_term')?>') !== -1) {
+    var expires = new Date();
+    expires.setDate(expires.getDate() + <?php echo Mage::getStoreConfig('somethingdigital_criteo/settings/deduplication_cookie_lifetime'); ?>);
+    Mage.Cookies.set('criteo_deduplication', 1, expires);
+}
+</script>
+<?php endif; ?>
