@@ -1,0 +1,4 @@
+app/code/community/SomethingDigital/Criteo  app/code/community/SomethingDigital/Criteo
+app/etc/modules/SomethingDigital_Criteo.xml app/etc/modules/SomethingDigital_Criteo.xml
+app/design/frontend/base/default/template/somethingdigital/criteo app/design/frontend/base/default/template/somethingdigital/criteo
+app/design/frontend/base/default/layout/somethingdigital_criteo.xml app/design/frontend/base/default/layout/somethingdigital_criteo.xml
