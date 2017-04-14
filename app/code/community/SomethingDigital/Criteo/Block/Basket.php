@@ -33,6 +33,6 @@ class SomethingDigital_Criteo_Block_Basket extends Mage_Checkout_Block_Cart
     {
         $controller = Mage::app()->getRequest()->getControllerName();
         $fireTrackerAtCheckout = Mage::getStoreConfig('somethingdigital_criteo/settings/fire_basket_tracker_at_checkout');
-        return ((in_array($controller, $checkoutControllers) && $fireTrackerAtCheckout) || !in_array($controller, $checkoutControllers));
+        return ((in_array($controller, $this->checkoutControllers) && $fireTrackerAtCheckout) || !in_array($controller, $this->checkoutControllers));
     }
 }
