@@ -78,4 +78,15 @@
             </action>
         </reference>
     </checkout_onepage_success>
+
+    <onestepcheckout_index_index>
+        <block type="somethingdigital_criteo/basket" name="somethingdigital_criteo_basket" template="somethingdigital/criteo/basket.phtml">
+            <block type="core/template" name="somethingdigital_criteo_device_detection" as="somethingdigital_criteo_device_detection" template="somethingdigital/criteo/device_detection.phtml"/>
+        </block>
+        <reference name="head">
+            <action method="append">
+                <name>somethingdigital_criteo_basket</name>
+            </action>
+        </reference>
+    </onestepcheckout_index_index>
 </layout>
