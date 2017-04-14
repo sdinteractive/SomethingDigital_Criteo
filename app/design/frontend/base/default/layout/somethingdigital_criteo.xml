@@ -9,7 +9,9 @@
         </reference>
     </default>
     <cms_index_index>
-        <block type="core/template" name="somethingdigital_criteo_home" template="somethingdigital/criteo/home.phtml"/>
+        <block type="core/template" name="somethingdigital_criteo_home" template="somethingdigital/criteo/home.phtml">
+            <block type="core/template" name="somethingdigital_criteo_device_detection" as="somethingdigital_criteo_device_detection" template="somethingdigital/criteo/device_detection.phtml"/>
+        </block>
         <reference name="head">
             <action method="append" ifconfig="somethingdigital_criteo/settings/enabled">
                 <name>somethingdigital_criteo_home</name>
@@ -17,7 +19,9 @@
         </reference>
     </cms_index_index>
     <catalog_product_view>
-        <block type="core/template" name="somethingdigital_criteo_product" template="somethingdigital/criteo/product.phtml"/>
+        <block type="core/template" name="somethingdigital_criteo_product" template="somethingdigital/criteo/product.phtml">
+            <block type="core/template" name="somethingdigital_criteo_device_detection" as="somethingdigital_criteo_device_detection" template="somethingdigital/criteo/device_detection.phtml"/>
+        </block>
         <reference name="head">
             <action method="append" ifconfig="somethingdigital_criteo/settings/enabled">
                 <name>somethingdigital_criteo_product</name>
@@ -25,7 +29,9 @@
         </reference>
     </catalog_product_view>
     <catalog_category_view>
-        <block type="somethingdigital_criteo/listing" name="somethingdigital_criteo_listing" template="somethingdigital/criteo/listing.phtml"/>
+        <block type="somethingdigital_criteo/listing" name="somethingdigital_criteo_listing" template="somethingdigital/criteo/listing.phtml">
+            <block type="core/template" name="somethingdigital_criteo_device_detection" as="somethingdigital_criteo_device_detection" template="somethingdigital/criteo/device_detection.phtml"/>
+        </block>
         <reference name="head">
             <action method="append" ifconfig="somethingdigital_criteo/settings/enabled">
                 <name>somethingdigital_criteo_listing</name>
@@ -33,7 +39,9 @@
         </reference>
     </catalog_category_view>
     <catalogsearch_result_index>
-        <block type="somethingdigital_criteo/result" name="somethingdigital_criteo_result" template="somethingdigital/criteo/result.phtml"/>
+        <block type="somethingdigital_criteo/result" name="somethingdigital_criteo_result" template="somethingdigital/criteo/result.phtml">
+            <block type="core/template" name="somethingdigital_criteo_device_detection" as="somethingdigital_criteo_device_detection" template="somethingdigital/criteo/device_detection.phtml"/>
+        </block>
         <reference name="head">
             <action method="append" ifconfig="somethingdigital_criteo/settings/enabled">
                 <name>somethingdigital_criteo_result</name>
@@ -41,7 +49,9 @@
         </reference>
     </catalogsearch_result_index>
     <checkout_cart_index>
-        <block type="somethingdigital_criteo/basket" name="somethingdigital_criteo_basket" template="somethingdigital/criteo/basket.phtml"/>
+        <block type="somethingdigital_criteo/basket" name="somethingdigital_criteo_basket" template="somethingdigital/criteo/basket.phtml">
+            <block type="core/template" name="somethingdigital_criteo_device_detection" as="somethingdigital_criteo_device_detection" template="somethingdigital/criteo/device_detection.phtml"/>
+        </block>
         <reference name="head">
             <action method="append" ifconfig="somethingdigital_criteo/settings/enabled">
                 <name>somethingdigital_criteo_basket</name>
@@ -49,7 +59,9 @@
         </reference>
     </checkout_cart_index>
     <checkout_onepage_index>
-        <block type="somethingdigital_criteo/basket" name="somethingdigital_criteo_basket" template="somethingdigital/criteo/basket.phtml"/>
+        <block type="somethingdigital_criteo/basket" name="somethingdigital_criteo_basket" template="somethingdigital/criteo/basket.phtml">
+            <block type="core/template" name="somethingdigital_criteo_device_detection" as="somethingdigital_criteo_device_detection" template="somethingdigital/criteo/device_detection.phtml"/>
+        </block>
         <reference name="head">
             <action method="append" ifconfig="somethingdigital_criteo/settings/enabled">
                 <name>somethingdigital_criteo_basket</name>
@@ -57,7 +69,9 @@
         </reference>
     </checkout_onepage_index>
     <checkout_onepage_success>
-        <block type="somethingdigital_criteo/success" name="somethingdigital_criteo_success" template="somethingdigital/criteo/success.phtml"/>
+        <block type="somethingdigital_criteo/success" name="somethingdigital_criteo_success" template="somethingdigital/criteo/success.phtml">
+            <block type="core/template" name="somethingdigital_criteo_device_detection" as="somethingdigital_criteo_device_detection" template="somethingdigital/criteo/device_detection.phtml"/>
+        </block>
         <reference name="head">
             <action method="append" ifconfig="somethingdigital_criteo/settings/enabled">
                 <name>somethingdigital_criteo_success</name>

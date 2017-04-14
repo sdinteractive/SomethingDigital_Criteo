@@ -1,0 +1,13 @@
+<?php if (Mage::getStoreConfig('somethingdigital_criteo/settings/device_detection')): ?>
+    <script type="text/javascript">
+    /*
+     * This is a simple regEx that detects the deviceType that the user is currently using to access the site.
+     * This was provided to SomethingDigital by criteo and is being used as such.
+     */
+     var deviceType= /iPad/.test(navigator.userAgent)?"t":/Mobile|iP(hone|od)|Android|BlackBerry|IEMobile|Silk/.test(navigator.userAgent)?"m":"d";
+    </script>
+<?php else: ?>
+    <script type="text/javascript">
+        var deviceType= "d";
+    </script>
+<?php endif; ?>
