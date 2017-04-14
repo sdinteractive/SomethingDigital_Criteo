@@ -1,9 +1,13 @@
-<script type="text/javascript"> 
-    window.criteo_q = window.criteo_q || []; 
+<?php
+    echo $this->getChildHtml('somethingdigital_criteo_device_detection');
+?>
+
+<script type="text/javascript">
+    window.criteo_q = window.criteo_q || [];
     window.criteo_q.push(
         { event: "setAccount", account: "<?php echo Mage::getStoreConfig('somethingdigital_criteo/settings/account_number'); ?>" },
         { event: "setHashedEmail", email: ["<?php echo Mage::helper('somethingdigital_criteo')->getHashedEmail();?>"] },
-        { event: "setSiteType", type: "d" },
+        { event: "setSiteType", type: deviceType },
         { event: "viewItem", item: "<?php echo Mage::registry('current_product')->getData(Mage::getStoreConfig('somethingdigital_criteo/settings/product_identifier')); ?>" }
-    ); 
+    );
 </script>
