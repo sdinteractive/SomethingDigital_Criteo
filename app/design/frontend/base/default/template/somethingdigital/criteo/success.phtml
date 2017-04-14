@@ -1,16 +1,20 @@
-<script type="text/javascript"> 
-    window.criteo_q = window.criteo_q || []; 
+<?php
+    echo $this->getChildHtml('somethingdigital_criteo_device_detection');
+?>
+
+<script type="text/javascript">
+    window.criteo_q = window.criteo_q || [];
     window.criteo_q.push(
         { event: "setAccount", account: "<?php echo Mage::getStoreConfig('somethingdigital_criteo/settings/account_number'); ?>" },
         { event: "setHashedEmail", email: ["<?php echo Mage::helper('somethingdigital_criteo')->getHashedEmail();?>"] },
-        { event: "setSiteType", type: "d" },
-        { event: "trackTransaction", 
+        { event: "setSiteType", type: deviceType },
+        { event: "trackTransaction",
             <?php if (Mage::getStoreConfigFlag('somethingdigital_criteo/settings/use_deduplication')): ?>
                 deduplication: (Mage.Cookies.get('criteo_deduplication')) ? 1 : 0,
             <?php endif; ?>
-            id: "<?php echo $this->getData('order_id'); ?>", 
-            new_customer: <?php echo $this->getCriteoIsNewCustomer(); ?>, 
+            id: "<?php echo $this->getData('order_id'); ?>",
+            new_customer: <?php echo $this->getCriteoIsNewCustomer(); ?>,
             item: <?php echo $this->getCriteoOrderItems(); ?>
         }
-    ); 
+    );
 </script>
