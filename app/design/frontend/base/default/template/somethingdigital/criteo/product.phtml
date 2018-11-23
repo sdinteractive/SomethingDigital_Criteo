@@ -1,13 +1,31 @@
 <?php
     echo $this->getChildHtml('somethingdigital_criteo_device_detection');
+    $email = Mage::helper('somethingdigital_criteo')->getHashedEmail();
+    $product = Mage::registry('current_product')->getData(Mage::getStoreConfig('somethingdigital_criteo/settings/product_identifier'));
+    $useDataLayer = Mage::getStoreConfig('somethingdigital_criteo/settings/use_datalayer');
 ?>
 
-<script type="text/javascript">
-    window.criteo_q = window.criteo_q || [];
-    window.criteo_q.push(
-        { event: "setAccount", account: "<?php echo Mage::getStoreConfig('somethingdigital_criteo/settings/account_number'); ?>" },
-        { event: "setHashedEmail", email: ["<?php echo Mage::helper('somethingdigital_criteo')->getHashedEmail();?>"] },
-        { event: "setSiteType", type: deviceType },
-        { event: "viewItem", item: "<?php echo Mage::registry('current_product')->getData(Mage::getStoreConfig('somethingdigital_criteo/settings/product_identifier')); ?>" }
-    );
-</script>
+<?php if (!$useDataLayer): ?>
+    <script type="text/javascript">
+        window.criteo_q = window.criteo_q || [];
+        window.criteo_q.push(
+            { event: "setAccount", account: "<?php echo Mage::getStoreConfig('somethingdigital_criteo/settings/account_number'); ?>" },
+            { event: "setHashedEmail", email: ["<?php echo $email;?>"] },
+            { event: "setSiteType", type: deviceType },
+            { event: "viewItem", item: "<?php echo $product; ?>" }
+        );
+    </script>
+<?php else: ?>
+    <script type="text/javascript">
+        var dataLayer = dataLayer || [];
+        dataLayer.push(
+            {
+                event: "crto_productpage",
+                crto: {
+                    email: "<?php echo $email; ?>",
+                    products: "<?php echo $product; ?>"
+                }
+            }
+        );
+    </script>
+<?php endif;  ?>
