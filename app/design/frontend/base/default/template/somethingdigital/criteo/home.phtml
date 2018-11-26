@@ -1,13 +1,28 @@
 <?php
     echo $this->getChildHtml('somethingdigital_criteo_device_detection');
+    $email = Mage::helper('somethingdigital_criteo')->getHashedEmail();
+    $useDataLayer = Mage::getStoreConfig('somethingdigital_criteo/settings/use_datalayer');
 ?>
-
-<script type="text/javascript">
-    window.criteo_q = window.criteo_q || [];
-    window.criteo_q.push(
-        { event: "setAccount", account: "<?php echo Mage::getStoreConfig('somethingdigital_criteo/settings/account_number'); ?>" },
-        { event: "setHashedEmail", email: ["<?php echo Mage::helper('somethingdigital_criteo')->getHashedEmail();?>"] },
-        { event: "setSiteType", type: deviceType },
-        { event: "viewHome" }
-    );
-</script>
+<?php if (!$useDataLayer): ?>
+    <script type="text/javascript">
+        window.criteo_q = window.criteo_q || [];
+        window.criteo_q.push(
+            { event: "setAccount", account: "<?php echo Mage::getStoreConfig('somethingdigital_criteo/settings/account_number'); ?>" },
+            { event: "setHashedEmail", email: ["<?php echo $email?>"] },
+            { event: "setSiteType", type: deviceType },
+            { event: "viewHome" }
+        );
+    </script>
+<?php else: ?>
+    <script type="text/javascript">
+        var dataLayer = dataLayer || [];
+        dataLayer.push(
+            {
+                event: "crto_homepage",
+                crto: {
+                    email: "<?php echo $email; ?>"
+                }
+            }
+        );
+    </script>
+<?php endif;  ?>
